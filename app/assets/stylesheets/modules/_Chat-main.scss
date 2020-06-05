@@ -1,0 +1,113 @@
+.Chat {
+  .RightHeader {
+    width: calc(100vw - 300px);
+    height: 100px;
+    background-color: #ffffff;
+    border-bottom: solid 1px #eee;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    .RightHeader__group {
+      .RightHeader__groupName {
+        color: #333333;
+        font-size: 20px;
+        margin-top: 35px;
+      }
+      .RightHeader__memberList {
+        color: #999;
+        display: flex;
+        font-size: 12px;
+        margin-top: 15px;
+      }
+      .RightHeader__member {
+        padding-right: 5px;
+        font-size: 13px;
+      }
+    }
+    .RightHeader__edit-btn {
+      display: block;
+      border: 1px solid #38AEF0;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      a{
+        color: #38AEF0;
+        text-decoration: none;
+
+      }
+    }
+  }
+  
+  .MessageField {
+    width: calc(100vw - 300px);
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    padding: 35px 0 0 40px;
+    .MessageBox {
+      margin-bottom: 46px;
+      .MessageInfo {
+        display: flex;
+        .MessageInfo__userName {
+          color: #434a54;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .MessageInfo__date {
+          color: #999;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      }
+      .Message {
+        margin-top: 12px;
+        .Message__content {
+          color: #434a54;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  
+  .Footer {
+    width: calc(100vw - 300px);
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 50px 20px 40px;
+    .Form {
+      display: flex;
+      justify-content: space-between;
+      .Form__contents {
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        position: relative;
+        .Form__inputContent {
+          border: none;
+          height: 50px;
+          width: 100%;
+          padding: 0 45px 0 15px;
+        }
+        .Form__inputImage {
+          height: 50px;
+          position: absolute;
+          right: 10px;
+          line-height: 50px;
+          font-size: 25px;
+          .Hidden {
+            display:none;
+          }
+        }
+      }
+      .Form__submit {
+        background-color: #38AEF0;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
+      }
+    }
+  }
+}
