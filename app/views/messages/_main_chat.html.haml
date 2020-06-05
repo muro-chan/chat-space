@@ -1,0 +1,27 @@
+.Chat
+  .RightHeader
+    .RightHeader__group
+      .RightHeader__groupName test
+      %ul.RightHeader__memberList
+        Member :
+        %li.RightHeader__member
+        ooo
+    .RightHeader__edit-btn
+      = link_to "#", class: "RightHeader__editButton" do
+        Edit
+  .MessageField
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__userName ooo
+        .MessageInfo__date 2020年06月04日 18時28分
+      .Message
+        %p.Message__content ooo
+  .Footer
+    %form.Form{:enctype => "multipart/form-data", :action => "/groups/1382/messages", :accept => "UTF-8", :method => "post"}
+      %input{:name => "authenticity_token", :type => "hidden", :value => "2TTq9zbOxq/0eFHYfFNYTMjqJjhDvDumcR32wGP0oylT2gV/2/wfwSZacBchxquUfeehnErfYJxxCl9YO+Xxdw=="}/
+      .Form__contents
+        %input.Form__inputContent{:placeholder => "type a message", :name => "message[content]", :type => "text", :id => "message_content"}
+        %label.Form__inputImage{:for => "message_image"}
+          = icon('far','image')
+          %input.Hidden{:name => "message[image]", :type => "file", :id => "message_image"}
+      %input.Form__submit{:name => "commit", :type => "submit", :value => "Send", :data-disable-with => "Send"}
