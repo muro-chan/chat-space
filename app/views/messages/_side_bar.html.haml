@@ -1,15 +1,14 @@
 .Side-bar
   .Side-bar__user-name
     .Side-bar__list
-      %h3.Side-bar__name
-        = current_user.name
+      %h3.Side-bar__name masa
     %ul.Side-bar__iconlist
       %li.Side-bar__icon
         %a{href: '＃'}
         = icon('far','edit')
       %li.Side-bar__icon
-        = link_to edit_user_path(current_user) do
-          = icon('fas','cog')
+        %a{href: '＃'}
+        = icon('fas','cog')
   .Side-bar__group-list
     .Side-bar__group
       %a{href: '#'}
