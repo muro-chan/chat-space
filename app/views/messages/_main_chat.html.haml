@@ -1,15 +1,18 @@
 .Chat
   .RightHeader
     .RightHeader__group
-      .RightHeader__groupName test
+      .RightHeader__groupName
+        =@group.name
       %ul.RightHeader__memberList
         Member :
         %li.RightHeader__member
-        ooo
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
     .RightHeader__edit-btn
-      = link_to "#", class: "RightHeader__editButton" do
+      = link_to edit_group_path(@group.id), class: "RightHeader__editButton" do
         Edit
   .MessageField
+    = render @messages
     .MessageBox
       .MessageInfo
         .MessageInfo__userName ooo
@@ -17,11 +20,10 @@
       .Message
         %p.Message__content ooo
   .Footer
-    %form.Form{:enctype => "multipart/form-data", :action => "/groups/1382/messages", :accept => "UTF-8", :method => "post"}
-      %input{:name => "authenticity_token", :type => "hidden", :value => "2TTq9zbOxq/0eFHYfFNYTMjqJjhDvDumcR32wGP0oylT2gV/2/wfwSZacBchxquUfeehnErfYJxxCl9YO+Xxdw=="}/
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents
-        %input.Form__inputContent{:placeholder => "type a message", :name => "message[content]", :type => "text", :id => "message_content"}
-        %label.Form__inputImage{:for => "message_image"}
-          = icon('far','image')
-          %input.Hidden{:name => "message[image]", :type => "file", :id => "message_image"}
-      %input.Form__submit{:name => "commit", :type => "submit", :value => "Send", :data-disable-with => "Send"}
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'
