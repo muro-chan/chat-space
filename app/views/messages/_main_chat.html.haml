@@ -13,12 +13,12 @@
         Edit
   .MessageField
     = render @messages
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__userName ooo
-        .MessageInfo__date 2020年06月04日 18時28分
-      .Message
-        %p.Message__content ooo
+    -# .MessageBox
+      -# .MessageInfo
+        -# .MessageInfo__userName ooo
+        -# .MessageInfo__date 2020年06月04日 18時28分
+      -# .Message
+        -# %p.Message__content ooo
   .Footer
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents
